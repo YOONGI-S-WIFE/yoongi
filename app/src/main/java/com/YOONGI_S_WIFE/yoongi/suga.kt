@@ -8,6 +8,14 @@ fun main() {
     var cara_1 : Int = (1 .. 6).random()
     var cara_2 : Int = (1 .. 6).random()
 
+    println("este es el juego craps")
+    println("ganaras si sacas 1 en ambos dados")
+    println("ganaras si la suma de los 2 dados es igual a 3")
+    println("ganaras si sacas un total de 11 puntos en la suma de ambos dados")
+    println("ganaras si obtienes 2 o 12 en la suma de los dados")
+    println("ganaras si sacas un 7 en la suma de los dados")
+
+
     println("en el primer dado saco $cara_1")
     println("en el segundo dado saco $cara_2")
 
@@ -39,7 +47,7 @@ fun main() {
 
     } else {
 
-        println("prediste por culer@, vuelve a intentar")
+        println("perdiste por culer@, vuelve a intentar")
 
     }
 
