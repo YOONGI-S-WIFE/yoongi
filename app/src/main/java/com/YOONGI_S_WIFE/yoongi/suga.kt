@@ -39,7 +39,7 @@ fun main() {
 
     } else {
 
-        println("prediste por culer@")
+        println("prediste por culer@, vuelve a intentar")
 
     }
 
