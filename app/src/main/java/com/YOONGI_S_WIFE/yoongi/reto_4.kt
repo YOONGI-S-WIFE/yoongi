@@ -106,7 +106,7 @@ class recargar {
         println("digite la cantidad de dinero que le recargara a la cuenta a nombre de ese numero de telefono")
         valor_recarga = readLine()!!.toInt()
 
-        operacion = llamar_consultar_saldo.get_saldo_inicial() + valor_recarga;
+        operacion = llamar_consultar_saldo.get_saldo_inicial() - valor_recarga;
 
         if (telefono < 1000000000) {
 
