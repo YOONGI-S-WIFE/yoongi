@@ -29,19 +29,19 @@ class consultar {
 
 class loguin {
 
-    var telefono_registrado : Int = 1234567890;
+    var telefono_registrado : Long = 1234567890;
     var contrasenna_registrada : Int = 1234
-    var telefono_ingresado : Int = 0;
+    var telefono_ingresado : Long = 0;
     var contrasenna_ingresada : Int = 0;
     var validacion = false
 
-    fun get_telefono_registrado () : Int {
+    fun get_telefono_registrado () : Long {
 
         return telefono_registrado;
 
     }
 
-    fun set_telefono_registrado (telefono_recibido: Int) {
+    fun set_telefono_registrado (telefono_recibido: Long) {
 
         telefono_registrado = telefono_recibido;
 
@@ -52,7 +52,7 @@ class loguin {
     while (validacion == false) {
 
         println("digite por favor su numero de telefono");
-        telefono_ingresado = readLine()!!.toInt()
+        telefono_ingresado = readLine()!!.toLong()
 
         println("digite por favor la contraseña");
         contrasenna_ingresada = readLine()!!.toInt();
@@ -91,7 +91,7 @@ class loguin {
 
 class recargar {
 
-    var telefono : Int = 0;
+    var telefono : Long = 0;
     var valor_recarga : Int = 0;
     var operacion : Int = 0;
 
@@ -101,7 +101,7 @@ class recargar {
         var llamar_consultar_saldo = consultar();
 
         println("digite por favor el numero de telefono al que realizara la recarga, y por favor confirme que sea correcto")
-        telefono = readLine()!!.toInt();
+        telefono = readLine()!!.toLong();
 
         println("digite la cantidad de dinero que le recargara a la cuenta a nombre de ese numero de telefono")
         valor_recarga = readLine()!!.toInt()
@@ -198,6 +198,10 @@ class sacar {
 
     }
 
+
+
+}
+
 fun main() {
 
     var eleccion: Int = 0;
@@ -213,60 +217,57 @@ fun main() {
 
     while (seguir === 1) {
 
-    println("a que funcion deseas acceder?")
-    println("digite 1 para recargar su nequi")
-    println("digite 2 para consultar su saldo")
-    println("digite 3 para sacar dinero")
-    println("digite 4 para salir del sistema")
+        println("a que funcion deseas acceder?")
+        println("digite 1 para recargar su nequi")
+        println("digite 2 para consultar su saldo")
+        println("digite 3 para sacar dinero")
+        println("digite 4 para salir del sistema")
 
-    eleccion = readLine()!!.toInt()
+        eleccion = readLine()!!.toInt()
 
-    when (eleccion) {
+        when (eleccion) {
 
-        1 -> {
+            1 -> {
 
-            llamar_recargar.recargar();
+                llamar_recargar.recargar();
 
-            println("desea hacer otra funcion?, en caso de que lo desee digite uno, en caso contrario digite 2")
-            seguir = readLine()!!.toInt()
+                println("desea hacer otra funcion?, en caso de que lo desee digite uno, en caso contrario digite 2")
+                seguir = readLine()!!.toInt()
+
+            }
+
+            2 -> {
+
+                llamar_consultar_saldo.consultar_saldo()
+
+                println("desea hacer otra funcion?, en caso de que lo desee digite uno, en caso contrario digite 2")
+                seguir = readLine()!!.toInt()
+
+            }
+
+
+            3 -> {
+
+                llamar_sacar_plata.sacar_plata()
+
+                println("desea hacer otra funcion?, en caso de que lo desee digite uno, en caso contrario digite 2")
+                seguir = readLine()!!.toInt()
+
+            }
+
+            4 -> {
+
+                println("has salido de nequi, hasta la proxima mi vida")
+
+                println("desea hacer otra funcion?, en caso de que lo desee digite uno, en caso contrario digite 2")
+                seguir = readLine()!!.toInt()
+
+            }
+
+            else -> println("la opcion ingresada es invalida")
 
         }
-
-        2 -> {
-
-            llamar_consultar_saldo.consultar_saldo()
-
-            println("desea hacer otra funcion?, en caso de que lo desee digite uno, en caso contrario digite 2")
-            seguir = readLine()!!.toInt()
-
-        }
-
-
-        3 -> {
-
-            llamar_sacar_plata.sacar_plata()
-
-            println("desea hacer otra funcion?, en caso de que lo desee digite uno, en caso contrario digite 2")
-            seguir = readLine()!!.toInt()
-
-        }
-
-        4 -> {
-
-            println("has salido de nequi, hasta la proxima mi vida")
-
-            println("desea hacer otra funcion?, en caso de que lo desee digite uno, en caso contrario digite 2")
-            seguir = readLine()!!.toInt()
-
-        }
-
-        else -> println("la opcion ingresada es invalida")
 
     }
 
 }
-
-}
-
-}
-
