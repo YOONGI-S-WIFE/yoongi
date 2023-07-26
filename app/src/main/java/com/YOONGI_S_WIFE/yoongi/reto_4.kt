@@ -1,8 +1,8 @@
 package com.YOONGI_S_WIFE.yoongi
 
-class consultar {
+var saldo_inicial : Int = 100000
 
-    var saldo_inicial : Int = 100000
+class consultar {
 
     fun get_saldo_inicial() : Int {
 
@@ -10,9 +10,10 @@ class consultar {
 
     }
 
-    fun set_saldo_inicial (valor_recibido : Int) {
+    fun set_saldo_inicial (operacion : Int) {
 
-        saldo_inicial = valor_recibido
+        saldo_inicial = operacion
+
     }
 
     fun consultar_saldo () {
@@ -106,19 +107,17 @@ class recargar {
         println("digite la cantidad de dinero que le recargara a la cuenta a nombre de ese numero de telefono")
         valor_recarga = readLine()!!.toInt()
 
-        operacion = llamar_consultar_saldo.get_saldo_inicial() - valor_recarga;
-
         if (telefono < 1000000000) {
 
             println("el numero de telefono es invalido")
 
-        } else if (telefono == llamar_loguin.get_telefono_registrado() && valor_recarga <= llamar_consultar_saldo.get_saldo_inicial()) {
+        } else if (telefono === llamar_loguin.get_telefono_registrado()) {
 
             println("la recarga va dirigida a tu numero de telefono, la opcion es invalida")
 
+        } else if (valor_recarga <= llamar_consultar_saldo.get_saldo_inicial() && telefono >= 1000000000 && telefono <= 1999999999) {
 
-
-        } else if (valor_recarga <= llamar_consultar_saldo.get_saldo_inicial() && telefono > 1000000000 && telefono > 1999999999) {
+            operacion = llamar_consultar_saldo.get_saldo_inicial() - valor_recarga;
 
             println("la recarga al numero $telefono por un valor de  $valor_recarga, por ello tu saldo final es $operacion")
 
