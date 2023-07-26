@@ -112,15 +112,15 @@ class recargar {
 
             println("el numero de telefono es invalido")
 
-        } else if (telefono == llamar_loguin.get_telefono_registrado() && valor_recarga < llamar_consultar_saldo.get_saldo_inicial()) {
+        } else if (telefono == llamar_loguin.get_telefono_registrado() && valor_recarga <= llamar_consultar_saldo.get_saldo_inicial()) {
 
             println("la recarga va dirigida a tu numero de telefono, la opcion es invalida")
 
 
 
-        } else if (valor_recarga < llamar_consultar_saldo.get_saldo_inicial() && telefono > 1000000000 && telefono > 1999999999) {
+        } else if (valor_recarga <= llamar_consultar_saldo.get_saldo_inicial() && telefono > 1000000000 && telefono > 1999999999) {
 
-            println("la recarga al numero $telefono por un valor de  $valor_recarga, por ello tu saldo final es $operacion|")
+            println("la recarga al numero $telefono por un valor de  $valor_recarga, por ello tu saldo final es $operacion")
 
             llamar_consultar_saldo.set_saldo_inicial(operacion);
 
